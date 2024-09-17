@@ -1,0 +1,22 @@
+```mermaid
+flowchart TD
+    subgraph Initialization
+        Start([Start]) --> B[Set Range (min, max)]
+        B --> C[Generate Random Number within Range]
+    end
+
+    subgraph Game Loop
+        D[Prompt User for Guess] --> E[Get User Input]
+        E --> F{Is Guess Valid?}
+        F -- Yes --> G{Is Guess = Random Number?}
+        F -- No --> D
+
+        G -- Yes --> H[Display "You Win!"] --> End([End])
+        G -- No --> I{Is Guess > Random Number?}
+
+        I -- Yes --> J[Display "Too High!"]
+        I -- No --> K[Display "Too Low!"]
+
+        J --> D
+        K --> D
+    end
