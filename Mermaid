@@ -1,8 +1,7 @@
 ```mermaid   
-flowchart TD   
-        Start([Start]) --> B[Set Range (min, max)]
-        B --> C[Generate Random Number within Range]
-    END
+flowchart TD
+    Id1[This is the text in the box] --> B[Set Range (min, max)]
+    B --> C[Generate Random Number within Range]
 
     subgraph Game Loop
         D[Prompt User for Guess] --> E[Get User Input]
@@ -10,7 +9,7 @@ flowchart TD
         F -- Yes --> G{Is Guess = Random Number?}
         F -- No --> D
 
-        G -- Yes --> H[Display "You Win!"] --> End([End])
+        G -- Yes --> H[Display "You Win!"] --> Z[End]
         G -- No --> I{Is Guess > Random Number?}
 
         I -- Yes --> J[Display "Too High!"]
