@@ -1,13 +1,13 @@
 ```mermaid
 flowchart TD
-    A[Start] --> B{Generate Random Number}
-    B --> C[Prompt User for Guess]
-    C --> D{Is Guess Correct?}
-    D -- Yes --> E["You Win!"]
-    E --> F[End]
-    D -- No --> G{Is Guess Higher?}
-    G -- Yes --> H["Too High"]
-    H --> C
-    G -- No --> I["Too Low"]
-    I --> C
+    A[Start] --> B[Get User Input]
+    B --> C["Is it a valid integer?"]
+    C --> Yes -->F["Is guess correct?"]
+    C --> No --> E["Invalid Guess.  Try Again!"]
+    E --> B
+    F -- Yes --> H["You Win!"]
+    F -- No --> G["Is it Higher?"]
+    G -- Yes --> I["Too High. Try again!"] -->B
+    G -- No --> J["Too Low.  Try again!"] -->B
+    
 ```
